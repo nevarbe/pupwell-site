@@ -1,0 +1,9 @@
+node_modules/
+.env*
+*.tar.gz
+*.tgz
+*.zip
+.DS_Store
+proof/
+preview*.log
+policy-draft.md
