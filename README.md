@@ -4,6 +4,8 @@ Buildless HTML, CSS and JavaScript. Self-hosted fonts and first-party art. No fo
 
 Serve `dist/` as the web root. For local preview: `python -m http.server 8797 --directory dist`.
 
+Netlify uses the root `netlify.toml`: no build command, repository root as base, and `dist` as the publish directory. GitHub pushes to `main` trigger production deploys.
+
 ## Pages
 
 - `/`: marketing landing page, local illustrative goal interaction
