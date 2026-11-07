@@ -1,21 +1,17 @@
 # Pupwell website
 
-Buildless HTML, CSS and JavaScript. Self-hosted fonts and first-party art. No forms, analytics, cookies, database connections or app credentials.
+Static HTML, CSS and JavaScript. Production domain: https://trypupwell.app
 
-Serve `dist/` as the web root. For local preview: `python -m http.server 8797 --directory dist`.
+Netlify project: pupwell. GitHub source: https://github.com/nevarbe/pupwell-site (main).
+Publish directory: dist. No build command is required.
 
-Netlify uses the root `netlify.toml`: no build command, repository root as base, and `dist` as the publish directory. GitHub pushes to `main` trigger production deploys.
+The homepage uses home.css/home.js and the information pages use styles.css/site.js.
+Run `node serve.mjs` to preview locally on port 8798. Regenerate Support, Privacy and Terms with `python build-pages.py`; this does not overwrite the homepage.
 
-## Pages
+Public contact: hello@trypupwell.app. The homepage, information pages, canonical URLs and sitemap use the production identity. _redirects forwards the netlify.app and www aliases to the primary domain, preserving paths.
 
-- `/`: marketing landing page, local illustrative goal interaction
-- `/support/`: pre-launch help
-- `/privacy/`: website privacy and pre-release app data information
-- `/terms/`: pre-release website terms
-- `/404.html`: branded fallback
+Set appStoreUrl in dist/config.js to the genuine App Store listing when publicly released. Until then download buttons show an honest coming-soon dialog.
 
-## Release handoff
+Support, privacy and terms are explicitly pre-release documents. Final operator details, retention and release disclosures still require completion before App Store submission. Do not invent them. No analytics, signup forms, app credentials or database connections are included in this static site.
 
-The domain `pupwell.app` is not registered or connected by this project. No App Store URL, business contact or operator identity has been invented. Final app policies require the real contact/operator, server retention/deletion information and release review. See `policy-draft.md` for internal verified facts and remaining policy decisions. Add the genuine App Store URL once released. Keep all core/free vs Plus descriptions truthful.
-
-Use the `.openai/hosting.json` Site identity for future deployment. Assets are portable to GitHub Pages, Cloudflare Pages or another static host. The source does not depend on Supabase.
+All fonts and media are served locally. Motion respects reduced-motion settings. ASSETS.md records asset sources and licenses.

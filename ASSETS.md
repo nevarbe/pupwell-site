@@ -9,3 +9,11 @@ Source: existing Pupwell application assets. No mascot artwork was regenerated. 
 - Fonts: Barlow Condensed Black headings; Manrope Medium body and Bold UI. Included OFL files must remain with font distribution.
 
 Recommended minimum imagery: wave hero; garden preview; pool feature; campfire feature; notes journal. No proof screenshots were reused because they show private/test names or unfinished wardrobe.
+
+## Clucky-inspired landing hero refresh (5 November 2026)
+
+- `hero-hello.webp`: approved supplied v28 `helloSoft.webp`, optimized at540×540,72 encoded frames,3042ms, infinite loop, original alpha and frame timing preserved.1301980bytes.
+- `pupwell-hero-poster.webp`: matching approved helloSoft poster,540×540 transparent still,20088bytes. Use immediately during load and for reduced motion; do not hide the hero while motion loads.
+- `pupwell-footer.webp`: same matching poster at200×200,5006bytes. Prefer this still for a small footer rather than another animated decoder.
+
+No new drawing, pose synthesis or AI image generation. Contact-sheet verification compares first, quarter, middle, three-quarter and final frames under `proof/hero-hello-frames.jpg` (local-only QA).
