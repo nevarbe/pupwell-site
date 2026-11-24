@@ -76,30 +76,6 @@ mascot.addEventListener('click', () => {
   greetingTimer = setTimeout(() => mascot.classList.remove('greet'), 3100);
 });
 
-const dialog = document.querySelector('.launch-dialog');
-let appStoreUrl = '';
-try {
-  const candidate = new URL(window.PUPWELL_CONFIG?.appStoreUrl || '');
-  if (candidate.protocol === 'https:' && candidate.hostname === 'apps.apple.com') appStoreUrl = candidate.href;
-} catch { /* Pre-launch: keep the honest coming-soon state. */ }
-document.querySelectorAll('[data-store]').forEach(link => {
-  if (appStoreUrl) {
-    link.href = appStoreUrl;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-  } else {
-    link.setAttribute('aria-haspopup', 'dialog');
-    link.addEventListener('click', event => {
-      if (typeof dialog.showModal === 'function') {
-        event.preventDefault();
-        if (!dialog.open) dialog.showModal();
-      }
-    });
-  }
-});
-if (appStoreUrl) document.querySelectorAll('.release-status').forEach(node => { node.textContent = 'Available on the App Store'; });
-dialog.querySelectorAll('button').forEach(button => button.addEventListener('click', () => dialog.close()));
-dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
 document.querySelectorAll('[data-year]').forEach(node => node.textContent = String(new Date().getFullYear()));
 if ('IntersectionObserver' in window && !reduced.matches) {
   const reveal = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
